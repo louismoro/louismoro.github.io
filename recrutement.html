@@ -19,17 +19,144 @@
                 <li><a href="categorie3.html">Nos spécialités</a></li>
                 <li><a href="recrutement.html">Espace Recrutement et Formation MO/RO de la CRS</a></li>
                 <li><a href="#" id="privateLink">Espace Personnel de la CRS</a></li>
-            </ul>
-        </nav>
+            </ul>   
     </header>        
 
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f5f5f5;
+      }
+
+      .carousel-container {
+          max-width: 1000px; 
+          height: 600px; 
+          margin: 50px auto;
+          position: relative;
+          overflow: hidden;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .carousel-images {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-images img {
+          width: 100%;
+          height: 100%; 
+          object-fit: cover; 
+          border-radius: 10px;
+      }
+
+      .arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+          border-radius: 50%;
+          font-size: 1.5em;
+      }
+
+      .arrow-left {
+          left: 10px;
+      }
+
+      .arrow-right {
+          right: 10px;
+      }
+
+      .dots {
+          text-align: center;
+          margin-top: 10px;
+      }
+
+      .dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin: 5px;
+          background-color: #bbb;
+          border-radius: 50%;
+          cursor: pointer;
+      }
+
+      .active {
+          background-color: #717171;
+      }
+  </style>
+</head>
+<body>
+
+<div class="carousel-container">
+  <div class="carousel-images">
+    <img src="https://raw.githubusercontent.com/louismoro/louismoro.github.io/refs/heads/main/Recrutement%20et%20Formation%20crs/Capture%20d%E2%80%99%C3%A9cran%202024-09-25%20132915.png" alt="Logo" class="logo">
+    <img src="https://raw.githubusercontent.com/louismoro/louismoro.github.io/refs/heads/main/Recrutement%20et%20Formation%20crs/Capture%20d'%C3%A9cran%202024-09-22%20024118.png" alt="Logo" class="logo">
+  </div>
+
+  <button class="arrow arrow-left">&#10094;</button>
+  <button class="arrow arrow-right">&#10095;</button>
+
+  <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+  </div>
+</div>
+
+<script>
+    const carouselImages = document.querySelector('.carousel-images');
+    const images = document.querySelectorAll('.carousel-images img');
+    const dots = document.querySelectorAll('.dot');
+    const arrowLeft = document.querySelector('.arrow-left');
+    const arrowRight = document.querySelector('.arrow-right');
+    let index = 0;
+
+    function updateCarousel() {
+        carouselImages.style.transform = `translateX(${-index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function nextImage() {
+        index = (index + 1) % images.length;
+        updateCarousel();
+    }
+
+    function prevImage() {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+    }
+
+    arrowRight.addEventListener('click', nextImage);
+    arrowLeft.addEventListener('click', prevImage);
+
+    dots.forEach((dot, dotIndex) => {
+        dot.addEventListener('click', () => {
+            index = dotIndex;
+            updateCarousel();
+        });
+    });
+
+    dots[0].classList.add('active');
+</script>
+
     <header> 
-        <div class="logo-container">
-            <img src="https://raw.githubusercontent.com/louismoro/louismoro.github.io/refs/heads/main/Recrutement%20et%20Formation%20crs/Capture%20d%E2%80%99%C3%A9cran%202024-09-25%20132915.png" alt="Logo" class="logo">
-            <img src="https://raw.githubusercontent.com/louismoro/louismoro.github.io/refs/heads/main/Recrutement%20et%20Formation%20crs/Capture%20d'%C3%A9cran%202024-09-22%20024118.png" alt="Logo" class="logo">
             <style>
                 body {
-                    background-color: #c9c9c9;
+                    background-color: #ffffff;
                     font-family: 'Arial', sans-serif;
                 }
                 
@@ -40,7 +167,7 @@
                 
                 .link-container a {
                     display: inline-block;
-                    background-color: #c9c9c9;
+                    background-color: #34495e;
                     color: antiquewhite;
                     text-decoration: none;
                     font-size: 18px;
@@ -59,10 +186,12 @@
                     transform: scale(0.98);
                 }
             </style>
-            <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSc0B-Z-T4bTxOrL_riHwkorEX5QFVwVN_nf6a9THUMhXKeAIA/viewform">Centre de recrutement de la DZCRS</a></p>
-            <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfLLqelCvoRXxsFlh9aC1gbmYI1vdh8wJcYmLWxeRVC69BvSg/viewform">Centre de formation de la DZCRS</a></p>
-            <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSchuNStH1dw7pssODb7iPd3Xfwj_SbMGBogu5D0vKVElZEgXQ/viewform">QUESTIONNAIRE DE RECRUTEMENT – MOTOCYCLISTE</a></p>
-        </nav>
+            
+            <div class="link-container">
+                <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSc0B-Z-T4bTxOrL_riHwkorEX5QFVwVN_nf6a9THUMhXKeAIA/viewform">Centre de recrutement de la DZCRS</a></p>
+                <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfLLqelCvoRXxsFlh9aC1gbmYI1vdh8wJcYmLWxeRVC69BvSg/viewform">Centre de formation de la DZCRS</a></p>
+                <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSchuNStH1dw7pssODb7iPd3Xfwj_SbMGBogu5D0vKVElZEgXQ/viewform">QUESTIONNAIRE DE RECRUTEMENT – MOTOCYCLISTE</a></p>
+            </div>
     </header>
 <a style="
             color: white; 
@@ -79,3 +208,5 @@
             Retour à l'accueil
         </a>
     </header>
+</body>
+</html>
