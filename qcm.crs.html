@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Compagnie Républicaine de Sécurité KelRP</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/louismoro/louismoro.github.io/refs/heads/main/logo%20crs.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://raw.githubusercontent.com/louismoro/louismoro.github.io/main/logo%20crs.png" alt="Logo" class="logo">
+        <h1 style="color:rgb(224, 12, 12);">STHI CRS</h1>
+        <nav>
+            <ul>
+                <li><a href="tenue.crs.html">Mes Tenues</a></li>
+                <li><a href="missions.crs.html">Mes Missions</a></li>
+                <li><a href="qcm.crs.html">Mes QCM</a></li>
+                <li><a href="categorie5.html">Règlement CRS TV/TC</a></li>
+                <li><a href="categorie6.html">Règlement et Formation TM</a></li>
+                <li><a href="categorie7.html">Règlement MO/RO</a></li>
+                <li><a href="categorie8.html">Règlement CRS Nautique</a></li>
+                <li><a href="categorie9.html">FTSI CRS</a></li>
+                <li><a href="categorie10.html">DOT CRS</a></li>
+                <li><a href="categorie11.html">STHI CRS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #333;
+      }
+
+      .carousel-container {
+          max-width: 1000px; 
+          height: 600px; 
+          margin: 50px auto;
+          position: relative;
+          overflow: hidden;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .carousel-images {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-images img {
+          width: 100%;
+          height: 100%; 
+          object-fit: cover; 
+          border-radius: 10px;
+      }
+
+      .arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+          border-radius: 50%;
+          font-size: 1.5em;
+      }
+
+      .arrow-left {
+          left: 10px;
+      }
+
+      .arrow-right {
+          right: 10px;
+      }
+
+      .dots {
+          text-align: center;
+          margin-top: 10px;
+      }
+
+      .dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin: 5px;
+          background-color: #333;
+          border-radius: 50%;
+          cursor: pointer;
+      }
+
+      .active {
+          background-color: #717171;
+      }
+  </style>
+</head>
+
+<script>
+    const carouselImages = document.querySelector('.carousel-images');
+    const images = document.querySelectorAll('.carousel-images img');
+    const dots = document.querySelectorAll('.dot');
+    const arrowLeft = document.querySelector('.arrow-left');
+    const arrowRight = document.querySelector('.arrow-right');
+    let index = 0;
+
+    function updateCarousel() {
+        carouselImages.style.transform = `translateX(${-index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function nextImage() {
+        index = (index + 1) % images.length;
+        updateCarousel();
+    }
+
+    function prevImage() {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+    }
+
+    arrowRight.addEventListener('click', nextImage);
+    arrowLeft.addEventListener('click', prevImage);
+
+    dots.forEach((dot, dotIndex) => {
+        dot.addEventListener('click', () => {
+            index = dotIndex;
+            updateCarousel();
+        });
+    });
+
+    dots[0].classList.add('active');
+</script>
+
+    <header> 
+            <style>
+                body {
+                    background-color: #333;
+                    font-family: 'Arial', sans-serif;
+                }
+                
+                .link-container {
+                    margin: 20px;
+                    text-align: center;
+                }
+                
+                .link-container a {
+                    display: inline-block;
+                    background-color: #34495e;
+                    color: antiquewhite;
+                    text-decoration: none;
+                    font-size: 18px;
+                    padding: 15px 25px;
+                    margin: 10px 0;
+                    border-radius: 10px;
+                    transition: background-color 0.3s, transform 0.3s;
+                }
+                
+                .link-container a:hover {
+                    background-color: #1abc9c;
+                    transform: scale(1.05);
+                }
+                
+                .link-container a:active {
+                    transform: scale(0.98);
+                }
+            </style>
+            
+            <div class="link-container">
+                <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfpS5aYe9IYN1UlBf7-z3lnNPQ_r-bztrLS1LwTbAFoVbcwgQ/viewform">Questionnaire Maintien et rétablissement de l'ordre</a></p>
+                <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSchuNStH1dw7pssODb7iPd3Xfwj_SbMGBogu5D0vKVElZEgXQ/viewform">Questionnaire Motocycliste</a></p>
+            </div>
+    </header>
+    
+        <a style="
+            color: white; 
+            background-color: rgb(109, 108, 107); 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            transition: background-color 0.3s, transform 0.3s; 
+            font-weight: bold;
+        " 
+        href="index.html" 
+        onmouseover="this.style.backgroundColor='rgb(85, 84, 83)'; this.style.transform='scale(1.05)';" 
+        onmouseout="this.style.backgroundColor='rgb(109, 108, 107)'; this.style.transform='scale(1)';">
+            Retour à l'accueil
+        </a>
+            <a style="
+                color: white; 
+                background-color: rgb(109, 108, 107); 
+                padding: 10px 20px; 
+                text-decoration: none; 
+                border-radius: 5px; 
+                transition: background-color 0.3s, transform 0.3s; 
+                font-weight: bold;
+            " 
+            href="categorie4.html" 
+            onmouseover="this.style.backgroundColor='rgb(85, 84, 83)'; this.style.transform='scale(1.05)';" 
+            onmouseout="this.style.backgroundColor='rgb(109, 108, 107)'; this.style.transform='scale(1)';">
+            Espace Personnel CRS
+            </a>
+    </header>
+</body>
+</html>
